@@ -53,7 +53,7 @@
     <Compile Include="Day.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IRecipe.cs" />
-    <Compile Include="lemon.cs" />
+    <Compile Include="Lemon.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Sell.cs" />
     <Compile Include="Program.cs" />

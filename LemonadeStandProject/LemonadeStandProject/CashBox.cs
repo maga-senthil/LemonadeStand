@@ -8,9 +8,10 @@ namespace LemonadeStandProject
 {
     class CashBox
     {
-        public double cashEarned;
+        public double profit;
         public double expense;
         double amountToLemSold;
+        public double netProfit;
 
 
         public double profitForTheDay(Day day,Sell sell)
@@ -23,9 +24,24 @@ namespace LemonadeStandProject
         public double CalculateToRemainCash(Player player)
         {
             expense = player.initialCashBalance  - player.startAmount;
-            cashEarned = amountToLemSold - expense;
+            profit = amountToLemSold - expense;
 
-            return cashEarned;
+            return profit;
+        }
+
+        public double CalNetProfit()
+        {
+            netProfit += profit;
+            return netProfit;
+        }
+
+        public void DisplayNetProfit(Player player)
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Weekly profit  : {0}",netProfit);
+            Console.WriteLine("Cash Remaining : {0}",player.startAmount);
+            Console.WriteLine("");
+            Console.WriteLine("*******************************************************************************");
         }
     }
 }

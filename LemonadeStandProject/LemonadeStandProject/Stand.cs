@@ -29,7 +29,7 @@ namespace LemonadeStandProject
         }
 
 
-        public int GetLemToRecipe()
+        public int AddLemonToRecipe()
         {
             try
             {
@@ -39,12 +39,12 @@ namespace LemonadeStandProject
             catch
             {
                 Console.WriteLine("Enter Proper value:( accept only numbers)");
-                GetLemToRecipe();
+                AddLemonToRecipe();
             }
             return amountOfLemon;
         }
 
-        public int GetSugToRecipe()
+        public int AddSugarToRecipe()
         {
             try
             {
@@ -54,12 +54,12 @@ namespace LemonadeStandProject
             catch
             {
                 Console.WriteLine("Enter Proper value:( accept only numbers)");
-                GetSugToRecipe();
+                AddSugarToRecipe();
             }
             return amountOfSugar;
         }
 
-        public int GetIceToRecipe()
+        public int AddIceToRecipe()
         {
             try
             {
@@ -69,7 +69,7 @@ namespace LemonadeStandProject
             catch
             {
                 Console.WriteLine("Enter Proper value:( accept only numbers)");
-                GetIceToRecipe();
+                AddIceToRecipe();
             }
             return amountOfIce;
         }
@@ -83,19 +83,19 @@ namespace LemonadeStandProject
             Console.WriteLine("Lemonade Cups  : {0}", numberOfLemCups);
         }
 
-        public int CheckLemInv()
+        public int CheckLemonInventory()
         {
             lemonPerCup = inventory.lemonInStock / amountOfLemon;
             return lemonPerCup;
         }
 
-        public int CheckSugInv()
+        public int CheckSugarInventory()
         {
             sugarPerCup = inventory.sugarInStock / amountOfSugar;
             return sugarPerCup;
         }
 
-        public int CheckIceInv()
+        public int CheckIceInventory()
         {
             icePerCup = inventory.iceInStock / amountOfIce;
             return icePerCup;
@@ -153,72 +153,7 @@ namespace LemonadeStandProject
 
 
 
-            //public void PlayerPickLemon(Inventory inventory)
-            //{
-            //    Console.Write("How many lemons you want :");
-            //    string amountOfLemonReq = Console.ReadLine();
-
-
-            //    if (!System.Text.RegularExpressions.Regex.IsMatch(amountOfLemonReq, "^[0-9]"))
-            //    {
-            //        Console.WriteLine("Enter proper value(Accept only numbers):");
-            //        PlayerPickLemon(inventory);
-
-            //    }
-            //    else
-            //    {
-            //        amountOfLemon = Convert.ToInt32(amountOfLemonReq);
-            //        lemonPerCup = inventory.lemonInStock / amountOfLemon;
-            //    }
-
-            //}
-
-
-            //public void PlayerPickSugar(Inventory inventory)
-            //{
-            //    Console.Write("How many suger packs you want :");
-            //    string amountOfSugarReq = Console.ReadLine();
-
-
-            //    if (!System.Text.RegularExpressions.Regex.IsMatch(amountOfSugarReq, "^[0-9]"))
-            //    {
-            //        Console.WriteLine("Enter proper value(Accept only numbers):");
-            //        PlayerPickSugar(inventory);
-
-            //    }
-            //    else
-            //    {
-            //        amountOfSugar = Convert.ToInt32(amountOfSugarReq);
-            //        sugarPerCup = inventory.sugarInStock / amountOfSugar;
-            //    }
-
-
-            // }
-
-
-
-            //public void PlayerPickIce(Inventory inventory)
-            //{ 
-
-            //    Console.Write("How many ice cubes you want :");
-            //    string amountOfIceReq = Console.ReadLine();
-
-
-            //    if (!System.Text.RegularExpressions.Regex.IsMatch(amountOfIceReq, "^[0-9]"))
-            //    {
-            //        Console.WriteLine("Enter proper value(Accept only numbers):");
-            //        PlayerPickIce(inventory);
-
-            //    }
-            //    else
-            //    {
-            //        amountOfIce = Convert.ToInt32(amountOfIceReq);
-            //        icePerCup = inventory.iceInStock / amountOfIce;
-            //    }
-
-            //}
-
-
+            
         
     }
 

@@ -24,9 +24,9 @@ namespace LemonadeStandProject
             storeNumberInReport[0] = stand.numberOfLemCups;
             storeNumberInReport[1] = day.lemonadeCupsSold;
             storeNumberInReport[2] = cashBox.expense;
-            storeNumberInReport[3] = cashBox.cashEarned;
+            storeNumberInReport[3] = cashBox.profit;
 
-            lemProRepFile = @"c:\codecamp\GameReport.txt";
+            lemProRepFile = @"GameReport.txt";
 
             if (File.Exists(lemProRepFile))
             {

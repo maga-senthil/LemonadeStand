@@ -44,30 +44,30 @@ namespace LemonadeStandProject
                 day.Demand(day.weather);
                 player.StartAmountOfGame();
                 Console.WriteLine("You're going to start the business with ${0:00.00}.", player.startAmount);
-                player.buy.DisplayIngPrice();
+                player.buy.DisplayIngrediantPrice();
                 Console.WriteLine("Your Current Inventory:");
                 player.stand.inventory.CurrentInventory();
 
                 Console.WriteLine("Buy Ingrediants:");
 
                 player.buy.BuyIngrediant();
-                player.buy.CheckIngPrice(player);
+                player.buy.CheckIngrediantPrice(player);
 
-                player.stand.inventory.AddInvQuantity(player.buy.lemon, player.buy.sugar, player.buy.ice, player.buy.cup);
+                player.stand.inventory.AddToInventory(player.buy.lemon, player.buy.sugar, player.buy.ice, player.buy.cup);
 
                 player.UpdateAmount(player.buy);
 
                 Console.WriteLine("Now you are ready to prepare lemonade!");
                 Console.WriteLine("You can use your own lemonade Recipe!");
                 Console.Write("How many lemons do you want to add per cup?: ");
-                player.stand.GetLemToRecipe();
+                player.stand.AddLemonToRecipe();
                 Console.Write("How many sugarpacks do you want to add per cup?: ");
-                player.stand.GetSugToRecipe();
+                player.stand.AddSugarToRecipe();
                 Console.Write("How many iceCubes do you want to add per cup?: ");
-                player.stand.GetIceToRecipe();
-                player.stand.CheckLemInv();
-                player.stand.CheckSugInv();
-                player.stand.CheckIceInv();
+                player.stand.AddIceToRecipe();
+                player.stand.CheckLemonInventory();
+                player.stand.CheckSugarInventory();
+                player.stand.CheckIceInventory();
                 player.stand.CalMaxCups();
                 player.stand.CupsWantTo();
                 player.stand.CheckMaxCup();
@@ -78,15 +78,15 @@ namespace LemonadeStandProject
                 day.DisplayCustomers(player);
                 player.stand.cashBox.profitForTheDay(day, player.sell);
                 player.stand.cashBox.CalculateToRemainCash(player);
-                day.report.DisplayReport(day, player.stand, player.stand.cashBox, startDay);
+                day.report.DisplayReport(player,day, player.stand, player.stand.cashBox, startDay);
+                player.stand.cashBox.CalNetProfit();
                 day.writeFile.StoreReportInFile(day, player.stand, player.stand.cashBox, startDay);
-                Console.WriteLine("********************************************************************************");
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadKey();
             }
 
             startDay++;
-          
+            player.stand.cashBox.DisplayNetProfit(player);
             day.readFile.ReadReport(day.writeFile);
 
         }

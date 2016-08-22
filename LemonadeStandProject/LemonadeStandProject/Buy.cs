@@ -8,7 +8,7 @@ namespace LemonadeStandProject
 {
     class Buy
     {
-       public lemon lemon;
+       public Lemon lemon;
        public Sugar sugar;
        public Ice ice;
        public Cup cup;
@@ -21,7 +21,7 @@ namespace LemonadeStandProject
 
         public Buy()
         {
-            lemon = new lemon();
+            lemon = new Lemon();
             sugar = new Sugar();
             ice = new Ice();
             cup = new Cup();
@@ -33,7 +33,7 @@ namespace LemonadeStandProject
 
         }
 
-        public void DisplayIngPrice()
+        public void DisplayIngrediantPrice()
         {
             Console.WriteLine("Cost for Each Item:");
             Console.WriteLine("\tLemon  :{0:0.00}", lemonPrice);
@@ -100,7 +100,7 @@ namespace LemonadeStandProject
 
        
 
-        public double  CheckIngPrice(Player player)
+        public double  CheckIngrediantPrice(Player player)
         {
 
             totalPrice = (lemon.numberOfLemon * lemonPrice) + (sugar.numberOfSugarPacks * sugarPrice) + (ice.numberOfIceCubes * icePrice) + (cup.numberOfCups *cupPrice);
@@ -110,7 +110,7 @@ namespace LemonadeStandProject
             {
                 Console.WriteLine("Oops! you don't have so much money yet!; buy again...");
                 BuyIngrediant();
-                CheckIngPrice(player);
+                CheckIngrediantPrice(player);
             }
          
                 return totalPrice;

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStandProject
 {
-    class lemon 
+    class Lemon 
     {
        public int numberOfLemon;
 
-        public lemon()
+        public Lemon()
         {
             numberOfLemon = 0;
         }

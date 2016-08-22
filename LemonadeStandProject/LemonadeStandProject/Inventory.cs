@@ -23,7 +23,7 @@ namespace LemonadeStandProject
             cupsInStock = 0;
         }
 
-        public void AddInvQuantity(lemon lemon, Sugar sugar, Ice ice, Cup cup)
+        public void AddToInventory(Lemon lemon, Sugar sugar, Ice ice, Cup cup)
         {
 
             lemonInStock += lemon.numberOfLemon;
